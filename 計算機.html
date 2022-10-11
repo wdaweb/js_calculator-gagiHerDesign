@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Gugi&family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Fredoka One', cursive;
+        font-size: larger;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.3);
+        background: #c2e9fb;
+        height: 100%;
+        margin-bottom: 10rem;
+      }
+
+      #small {
+        width: 400px;
+        height: 400px;
+        border-radius: 200px;
+        position: absolute;
+        top: 9%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+        box-shadow: 10px 5px 15px 5px rgba(255, 255, 255, 0.6);
+      }
+
+      #bigball {
+        width: 700px;
+        height: 700px;
+        border-radius: 400px;
+        position: absolute;
+        top: 80%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        background-image: linear-gradient(120deg, #fda085 0%, #f6d365 100%);
+        box-shadow: -10px 5px 15px 5px rgba(255, 255, 255, 0.6);
+      }
+
+      table {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgb(244, 244, 244);
+        padding: 2rem;
+        border-radius: 50px;
+        border: 0px;
+        box-shadow:
+          10px 5px 5px 5px rgba(0, 0, 0, 0.2),
+          inset 0 0 15px 5px rgba(199, 65, 65, 0.3),
+          /* inset 0px 2px 1px 1px rgba(0, 0, 0, 0.9), */
+          inset 0px -2px 1px 0px rgba(0, 0, 0, 0.3);
+      }
+
+      td {
+        width: 100px;
+        height: 100px;
+        margin: 50px;
+        text-align: center;
+        font-size: 25px;
+        text-shadow:
+          1px 1px 3px #ccd0d4,
+          0px 0px 0px rgba(0, 0, 0, 0.8),
+          2px 2px 4px rgba(0, 0, 0, 0.3);
+        border: 0px;
+        border-radius: 100px;
+        box-shadow:
+          /* 浮起來 */
+          0 5px 10px -5px rgba(0, 0, 0, 0.5),
+          inset 0px -3px 5px 2px rgba(0, 0, 0, 0.2),
+          inset 0px 3px 5px 1px rgba(255, 255, 255, 0.7),
+          inset 0px 0px 5px 1px rgba(255, 255, 255, 0.8),
+          inset 0px 20px 30px 0px rgba(255, 255, 255, 0.2);
+
+      }
+
+      td:hover {
+        box-shadow:
+          /* 凹下去  */
+          inset 0 -3px 5px 2px rgba(0, 0, 0, 0.2),
+          inset 0px 3px 5px 1px rgba(186, 186, 186, 0.7),
+          inset 0px 0px 5px 1px rgba(255, 255, 255, 0.8),
+          inset 0px 20px 30px 0px rgba(65, 65, 65, 0.2);
+      }
+
+      td:active {
+        color: rgb(255, 255, 255);
+        background: #fda085;
+        box-shadow:
+          /* 凹下去  */
+          inset 0 -3px 5px 2px rgba(228, 163, 33, 0.2),
+          inset 0px 3px 5px 1px rgba(225, 56, 56, 0.7),
+          inset 0px 0px 5px 1px rgba(213, 136, 136, 0.8),
+          inset 0px 20px 30px 0px rgba(228, 163, 33, 0.2);
+      }
+
+      #text {
+        background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+        border: 3px solid #ccd0d4;
+        text-align: right;
+        padding: 0 2rem;
+        color: white;
+        font-size: 40px;
+        box-shadow: inset 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+      }
+
+      .circular {
+        width: 100px;
+        height: 100px;
+        margin: 100px;
+        position: absolute;
+        top: 3%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+
+      }
+
+      .circular path {
+        color: aliceblue;
+        fill: none;
+      }
+
+      .circular svg {
+        display: block;
+        overflow: visible;
+        transition: 10s;
+        animation-name: example;
+        animation: trs 10s ease-in infinite alternate;
+      }
+
+      @keyframes trs {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(720deg);
+        }
+      }
+
+      /* .circular svg:hover {
+        transform: rotate(-2turn);
+      } */
+    </style>
+  </head>
+
+  <body>
+    <div id="small"></div>
+    <div id="bigball"></div>
+    <!-- 測試環形文字 -->
+    <div class="circular">
+      <svg viewBox="0 0 100 100">
+        <path d="M 50 50 m -50 0 a 50 50 0 1 1 100 0 a 50 50 0 1 1 -100 0 z" id="circle" />
+        <text>
+          <textPath xlink:href="#circle">。gagiHerDesign。gagiHerDesign</textPath>
+        </text>
+      </svg>
+    </div>
+    <!-- 計算機 -->
+    <table border="1" cellspacing="20">
+      <tr>
+        <td colspan="4" id="text">0</td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td>/</td>
+        <td>*</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td rowspan="2">+</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td rowspan="2" style="background: #f6d365 ">=</td>
+      </tr>
+      <tr>
+        <td colspan="2">0</td>
+        <td>.</td>
+      </tr>
+
+
+    </table>
+    <script>
+
+
+
+      const text = document.getElementById('text')
+      const btns = document.querySelectorAll('td:not(#text)')
+
+      for (const btn of btns) {
+        btn.onclick = () => {
+          const btnText = btn.innerText
+          if (btnText === '=') {
+            text.innerText = eval(text.innerText)
+          } else if (btnText === 'C') {
+            text.innerText = '0'
+          } else {
+            if (text.innerText === '-' && isNaN(parseInt(btnText))) return
+
+            if (text.innerText !== '0') {
+              text.innerText += btnText
+            } else if (!['+', '*', '/'].includes(btnText)) {
+              text.innerText = btnText
+            }
+          }
+        }
+      }
+
+      // 鍵盤
+      document.onkeydown = event => {
+        const btnText = event.key
+        if (btnText === '=' || btnText === 'Enter') {
+          text.innerText = eval(text.innerText)
+        } else if (btnText === 'C') {
+          text.innerText = '0'
+        } else {
+          if (text.innerText === '-' && isNaN(parseInt(btnText))) return
+
+          if (text.innerText !== '0') {
+            text.innerText += btnText
+          } else if (!['+', '*', '/'].includes(btnText)) {
+            text.innerText = btnText
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>
