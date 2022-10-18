@@ -235,6 +235,9 @@
         } else {
           if (text.innerText === '-' && isNaN(parseInt(btnText))) return
 
+          if (!['+', '*', '/', 'c', '=', '.',].includes(btnText) && !btnText.match(/[1-9]/g)) return
+          // /([A-Za-z].*)@([A-Za-z].*)\.com/g
+
           if (text.innerText !== '0') {
             text.innerText += btnText
           } else if (!['+', '*', '/'].includes(btnText)) {
@@ -242,6 +245,8 @@
           }
         }
       }
+
+
     </script>
   </body>
 
